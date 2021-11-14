@@ -7,6 +7,15 @@ begin
 end;
 $$ language plpgsql;
 
+create or replace function clothing_count(personage_id integer) returns integer as $$
+declare
+res integer;
+begin
+select count(id) into res from clothing where owner_id = personage_id;
+return res;
+end;
+$$ language plpgsql;
+
 create or replace function prise_count(personage_id integer) returns integer as $$
 declare
     res integer;
