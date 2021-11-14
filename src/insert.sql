@@ -22,7 +22,7 @@ values ('Шрек', 1),
        ('Фея крестная', 4),
        ('Осел', 5),
        ('Фиона', 2),
-       ('Дракониха', 6)
+       ('Дракониха', 6),
        ('Волк', 5);
 
 insert into clothing(name, owner_id, type)
@@ -31,6 +31,9 @@ values ('свадебное платье', 5, 'праздничный наряд
 
 insert into event(name,  date_start, date_end, location_id, description, owner_id, visibility)
 values ('свадьба Фионы и лорда Фаркуада', '2003-2-1'::timestamp, '2003-2-1'::timestamp, 1, '', 2, true);
+
+insert into thing_control(type, event_id)
+values ('праздничный наряд', 1);
 
 insert into invitation(event_id, personage_id, confirmation)
 values (1, 2, true);
