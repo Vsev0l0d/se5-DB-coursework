@@ -10,12 +10,6 @@ values ('огр', 'безобразный злобный великан-людо
        ('говорящее яйцо ', 'одушевленное яйцо с чертами человека'),
        ('говорящее зеркало', 'зеркало с лицом внутри');
 
-insert into location(name, description, x, y)
-values ('замок лорда Фаркуада', '', 0, 0),
-       ('замок дракона', '', 1000, 700),
-       ('болото', '', 300, 400),
-       ('церковь', '', 260, 140);
-
 insert into personage(name, personage_type_id)
 values ('Шрек', 1),
        ('Лорд Фаркуад', 2),
@@ -25,9 +19,26 @@ values ('Шрек', 1),
        ('Дракониха', 6),
        ('Волк', 5);
 
+insert into fairy_personage(id, skill)
+values (6, 'разрушающий все на своем пути огонь, съедение врагов'),
+       (1, 'ульрапердёж, громко кричит'),
+       (3, 'исполняет любые желания крестницы, зелья на все случаи'),
+       (4, 'уболтает любого'),
+       (7, 'может съесть внучку');
+
 insert into clothing(name, owner_id, type)
 values ('свадебное платье', 5, 'праздничный наряд'),
        ('розовая пижама', 7, 'пижама');
+
+insert into weapon(name, damage, owner_id, type)
+values ('огонь дракона', 90, 6, 'магическое оружие'),
+       ('волшебная палочка', 30, 3, 'магическое оружие');
+
+insert into location(name, description, x, y)
+values ('замок лорда Фаркуада', '', 0, 0),
+       ('замок дракона', '', 1000, 700),
+       ('болото', '', 300, 400),
+       ('церковь', '', 260, 140);
 
 insert into event(name,  date_start, date_end, location_id, description, owner_id, visibility)
 values ('свадьба Фионы и лорда Фаркуада', '2003-2-1'::timestamp, '2003-2-1'::timestamp, 1, '', 2, true);
@@ -35,16 +46,5 @@ values ('свадьба Фионы и лорда Фаркуада', '2003-2-1'::
 insert into thing_control(type, event_id)
 values ('праздничный наряд', 1);
 
-insert into invitation(event_id, personage_id, confirmation)
-values (1, 2, true);
-
-insert into weapon(name, damage, owner_id, type)
-values ('огонь дракона', 90, 6, 'магическое оружие'),
-       ('волшебная палочка', 30, 3, 'магическое оружие');
-
-insert into fairy_personage(id, skill)
-values (6, 'разрушающий все на своем пути огонь, съедение врагов'),
-       (1, 'ульрапердёж, громко кричит'),
-       (3, 'исполняет любые желания крестницы, зелья на все случаи'),
-       (4, 'уболтает любого'),
-       (7, 'может съесть внучку');
+insert into invitation(event_id, personage_id)
+values (1, 5);
