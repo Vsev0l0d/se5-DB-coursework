@@ -1,4 +1,4 @@
-# se5-DB-cursework
+# se5-DB-coursework
 
 ## Задание 
 Реализовать даталогическую модель в реляционной СУБД PostgreSQL:
